@@ -41,11 +41,11 @@ RUN apt-get update -y \
   && apt-get -y install \
     xvfb \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-RUN set -x
-RUN Xvfb :1 -ac -noreset -core -screen 0 1280x1024x24 &
-ENV DISPLAY=:1.0
-ENV RENDER_ENGINE_VALUES=ogre2
-ENV MESA_GL_VERSION_OVERRIDE=3.3
+# RUN set -x
+# RUN Xvfb :1 -ac -noreset -core -screen 0 1280x1024x24 &
+# ENV DISPLAY=:1.0
+# ENV RENDER_ENGINE_VALUES=ogre2
+# ENV MESA_GL_VERSION_OVERRIDE=3.3
 
 # # Commands below run as the developer user
 # USER $USERNAME
@@ -53,4 +53,4 @@ ENV MESA_GL_VERSION_OVERRIDE=3.3
 # CMD ros2 run demo_nodes_cpp talker
 COPY ./warp.yaml .
 # CMD . /ws/install/setup.sh && warpcli run $ARTEFACTS_JOB_NAME
-CMD . /ws/install/setup.sh && xvfb-run ros2 launch cam_test sim1.launch.py output_video:=/ws/output/rec.avi
+CMD . /ws/install/setup.sh && xvfb-run ros2 launch cam_test sim1.launch.py output_video:=/ws/output/rec.mjpg

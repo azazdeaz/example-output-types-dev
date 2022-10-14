@@ -7,7 +7,7 @@ def main(args=None):
     rclpy.init(args=args)
     node = Node('my_node_name')
     print("??")
-    rclpy.spin_once(node, timeout_sec=15)
+    rclpy.spin_once(node, timeout_sec=23)
     node.get_logger().debug("Stopping.............")
     rclpy.shutdown()
 if __name__ == '__main__':
