@@ -52,5 +52,5 @@ RUN apt-get update -y \
 
 # CMD ros2 run demo_nodes_cpp talker
 COPY ./warp.yaml .
-# CMD . /ws/install/setup.sh && warpcli run $ARTEFACTS_JOB_NAME
-CMD . /ws/install/setup.sh && xvfb-run ros2 launch cam_test sim1.launch.py output_video:=/ws/output/rec.mjpg
+CMD . /ws/install/setup.sh && xvfb-run warpcli run $ARTEFACTS_JOB_NAME
+# CMD . /ws/install/setup.sh && xvfb-run ros2 launch cam_test sim1.launch.py output_video:=/ws/output/rec.mjpg
