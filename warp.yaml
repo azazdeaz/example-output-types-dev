@@ -1,6 +1,6 @@
 version: 0.1.0
 
-project: example-output-types
+project: example-output-types-dev
 on: 
   push:
     jobs:
